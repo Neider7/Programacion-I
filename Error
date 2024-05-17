@@ -1,1 +1,112 @@
 
+// Autor: Neider Q.
+
+#include <iostream>
+
+using namespace std;
+
+int funcion_suma(int);
+
+int main()
+{
+    int n;
+    cout << "Ingrese un valor: ";
+    cin >> n;
+    cout << "el total de la suma es: " << funcion_suma(n) << endl;
+    return 0;
+}
+int funcion_suma(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n + funcion_suma(n-1);
+}
+// Autor: Neider Q.
+
+#include <iostream>
+
+using namespace std;
+
+int funcion_suma_resta(int n);
+
+int main()
+{
+    int n;
+    cout << "Ingrese un valor: ";
+    cin >> n;
+    cout << "el total de la suma y resta: " << funcion_suma_resta(n) << endl;
+    return 0;
+}
+int funcion_suma_resta(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+    {
+        if (n % 2 == 0)
+            return funcion_suma_resta(n-1) - n;
+        else
+            return funcion_suma_resta(n-1) + n;
+    }
+}
+// Autor: Neider Q.
+
+#include <iostream>
+
+using namespace std;
+
+int funcion_factorial(int n);
+
+int main()
+{
+    int n;
+    cout << "Ingrese un valor: ";
+    cin >> n;
+    cout << "el total del factorial " << funcion_factorial(n) << endl;
+    return 0;
+}
+int funcion_factorial(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n * funcion_factorial(n-1);
+}
+// Autor: Neider Q.
+
+#include <iostream>
+
+using namespace std;
+
+int funcion_suma_factorial(int n, int m);
+int factorial(int n);
+
+int main() 
+{
+    int n, m;
+    cout << "Ingrese un valor para n: ";
+    cin >> n;
+    cout << "Ingrese un valor para m: ";
+    cin >> m;
+    cout << "El resultado es: " << factorial(m) << endl;
+    return 0;
+}
+
+int factorial(int n) 
+{
+    if (n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int funcion_suma_factorial(int n, int m) 
+{
+    int suma = 0;
+    for (int i = 1; i <= n; i++) {
+        suma += factorial(i);
+    }
+    suma += m + n; 
+    return suma;
+}
